@@ -18,8 +18,7 @@ class LocalDateTest extends TemporalTest[LocalDate] {
   val someDate = of(2011, 2, 28)
   val leapDate = of(2012, 2, 29)
 
-  val samples = Seq(MIN, ofEpochDay(-1), ofEpochDay(0), ofEpochDay(1), someDate,
-      leapDate, MAX)
+  val samples = Seq(MIN, ofEpochDay(-1), ofEpochDay(0), ofEpochDay(1), someDate, leapDate, MAX)
 
   def isSupported(unit: ChronoUnit): Boolean = unit.isDateBased
 
