@@ -1,18 +1,9 @@
-crossScalaVersions in ThisBuild := Seq("2.11.11", "2.10.6", "2.12.2", "2.13.0-M1")
-scalaVersion in ThisBuild := (crossScalaVersions in ThisBuild).value.head
+scalaVersion in ThisBuild := "2.12.3"
 
 val commonSettings: Seq[Setting[_]] = Seq(
   version := "0.2.3-SNAPSHOT",
   organization := "org.scala-js",
-  scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings"),
-
-  homepage := Some(url("http://scala-js.org/")),
-  licenses += ("BSD New",
-      url("https://github.com/scala-js/scala-js-java-time/blob/master/LICENSE")),
-  scmInfo := Some(ScmInfo(
-      url("https://github.com/scala-js/scala-js-java-time"),
-      "scm:git:git@github.com:scala-js/scala-js-java-time.git",
-      Some("scm:git:git@github.com:scala-js/scala-js-java-time.git")))
+  scalacOptions ++= Seq("-deprecation", "-feature", "-Xfatal-warnings")
 )
 
 lazy val root: Project = project.in(file(".")).
@@ -34,25 +25,6 @@ lazy val root: Project = project.in(file(".")).
       else
         Some("releases" at nexus + "service/local/staging/deploy/maven2")
     },
-    pomExtra := (
-        <developers>
-          <developer>
-            <id>sjrd</id>
-            <name>Sébastien Doeraene</name>
-            <url>https://github.com/sjrd/</url>
-          </developer>
-          <developer>
-            <id>gzm0</id>
-            <name>Tobias Schlatter</name>
-            <url>https://github.com/gzm0/</url>
-          </developer>
-          <developer>
-            <id>nicolasstucki</id>
-            <name>Nicolas Stucki</name>
-            <url>https://github.com/nicolasstucki/</url>
-          </developer>
-        </developers>
-    ),
     pomIncludeRepository := { _ => false }
   )
 
