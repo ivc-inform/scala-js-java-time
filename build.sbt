@@ -1,4 +1,4 @@
-scalaVersion in ThisBuild := "2.12.3"
+scalaVersion in ThisBuild := "2.12.4"
 
 val commonSettings: Seq[Setting[_]] = Seq(
   version := "0.2.3-SNAPSHOT",
