@@ -97,7 +97,7 @@ final class LocalDate private(year: Int, month: Month, dayOfMonth: Int) extends 
 
     def lengthOfMonth(): Int = month.length(_isLeapYear)
 
-    def lengthOfYear(): Int = if (_isLeapYear) 366 else 365
+    override def lengthOfYear(): Int = if (_isLeapYear) 366 else 365
 
     override def `with`(adjuster: TemporalAdjuster): LocalDate =
         adjuster.adjustInto(this).asInstanceOf[LocalDate]
